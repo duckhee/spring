@@ -32,5 +32,12 @@ public class UserController {
 		System.out.println("Ctrl loginForm");
 		return "user/login";
 	}
+	
+	@RequestMapping(value="/registe", method=RequestMethod.GET)
+	public String RegisteForm()
+	{
+		System.out.println("Ctrl registeForm");
+		return "user/registe";
+	}
 
 }
