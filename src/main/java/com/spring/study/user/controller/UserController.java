@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.spring.study.user.service.UserService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -23,5 +25,12 @@ public class UserController {
 	
 	@Autowired
 	BCryptPasswordEncoder passwordencoding;
+	
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String LoginForm()
+	{
+		System.out.println("Ctrl loginForm");
+		return "user/login";
+	}
 
 }
