@@ -323,7 +323,7 @@
                 <li><a href="/board/listAll"><i class="fa fa-circle-o"></i> Dashboard v1</a></li> 
                 <li><a href="/board/listCri"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
                 --%>
-                <li><a href="/board/listPage"><i class="fa fa-circle-o"></i>게시판</a></li>
+                <li><a href="<c:url value='/board/listPage' />"><i class="fa fa-circle-o"></i>게시판</a></li>
                 <li><a href="/resources/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
               </ul>
             </li>

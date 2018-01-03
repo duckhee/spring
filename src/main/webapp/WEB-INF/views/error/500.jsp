@@ -2,13 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 404 Page not found</title>
+  <title>AdminLTE 2 | 500 Error</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -35,7 +34,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="<c:url value='/'/>" class="logo">
+    <a href="../../index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -67,7 +66,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<c:url value='/resources/dist/img/user2-160x160.jpg' /> " class="img-circle" alt="User Image">
+                        <img src="<c:url value='/resources/dist/img/user2-160x160.jpg'/>" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -80,7 +79,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<c:url value='/resources/dist/img/user3-128x128.jpg' /> " class="img-circle" alt="User Image">
+                        <img src="<c:url value='/resources/dist/img/user3-128x128.jpg'/>" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -92,7 +91,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<c:url value='/resources/dist/img/user4-128x128.jpg' /> " class="img-circle" alt="User Image">
+                        <img src="<c:url value='/resources/dist/img/user4-128x128.jpg'/>" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -104,7 +103,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<c:url value='/resources/dist/img/user3-128x128.jpg' /> " class="img-circle" alt="User Image">
+                        <img src="<c:url value='/resources/dist/img/user3-128x128.jpg'/>" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -116,7 +115,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<c:url value='/resources/dist/img/user4-128x128.jpg' /> " class="img-circle" alt="User Image">
+                        <img src="<c:url value='/resources/dist/img/user4-128x128.jpg'/>" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -249,13 +248,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<c:url value='/resources/dist/img/user2-160x160.jpg' /> " class="user-image" alt="User Image">
+              <img src="<c:url value='/resources/dist/img/user2-160x160.jpg'/>" class="user-image" alt="User Image">
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="/resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<c:url value='/resources/dist/img/user2-160x160.jpg'/>" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
@@ -303,7 +302,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<c:url value='/resources/dist/img/user2-160x160.jpg' /> " class="img-circle" alt="User Image">
+          <img src="<c:url value='/resources/dist/img/user2-160x160.jpg'/>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -348,6 +347,7 @@
             <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
             <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
             <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
         </li>
         <li>
@@ -371,7 +371,6 @@
             <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
             <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
             <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -448,8 +447,8 @@
             <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
             <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
             <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li class="active"><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+            <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+            <li class="active"><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
             <li><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
             <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
@@ -502,26 +501,27 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        404 Error Page
+        500 Error Page
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Examples</a></li>
-        <li class="active">404 error</li>
+        <li class="active">500 error</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
+
       <div class="error-page">
-        <h2 class="headline text-yellow"> 404</h2>
+        <h2 class="headline text-red">500</h2>
 
         <div class="error-content">
-          <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
+          <h3><i class="fa fa-warning text-red"></i> Oops! Something went wrong.</h3>
 
           <p>
-            We could not find the page you were looking for.
-            Meanwhile, you may <a href="<c:url value='/' /> ">return to dashboard</a> or try using the search form.
+            We will work on fixing that right away.
+            Meanwhile, you may <a href="<c:url value='/'/>">return to dashboard</a> or try using the search form.
           </p>
 
           <form class="search-form">
@@ -529,16 +529,16 @@
               <input type="text" name="search" class="form-control" placeholder="Search">
 
               <div class="input-group-btn">
-                <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
+                <button type="submit" name="submit" class="btn btn-danger btn-flat"><i class="fa fa-search"></i>
                 </button>
               </div>
             </div>
             <!-- /.input-group -->
           </form>
         </div>
-        <!-- /.error-content -->
       </div>
       <!-- /.error-page -->
+
     </section>
     <!-- /.content -->
   </div>
