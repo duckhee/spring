@@ -25,6 +25,6 @@ public class BoardController {
 		System.out.println("list page controllers");
 		List<BoardVO> list = service.list();
 		model.addAttribute("list", list);
-		return null;
+		return "board/listPage";
 	}
 }
