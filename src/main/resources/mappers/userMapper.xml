@@ -11,7 +11,22 @@
  		WHERE  ID = #{id} AND UPW = #{upw}
  	</select>
 	<insert id="create_user" parameterType="user">
-		INSERT INTO 
+		INSERT INTO USERS (
+			user_id,
+			user_pw,
+			user_name,
+			user_phone,
+			user_email,
+			user_createtime,
+			 
+		) VALUES(
+			#{user_id},
+			#{user_pw},
+			#{user_name},
+			#{user_phone},
+			#{user_email},
+			#{user_createtime}
+		)
 	
 	</insert>
 	<delete id="delete_user" parameterType="user">

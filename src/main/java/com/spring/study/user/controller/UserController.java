@@ -43,7 +43,7 @@ public class UserController {
 		model.addAttribute("loginUser", result);
 	}
 	
-	@RequestMapping(value="logout", method=RequestMethod.GET)
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
 	public void logout(HttpSession session) {
 		System.out.println("Ctrl logout");
 	}
@@ -57,8 +57,14 @@ public class UserController {
 	@RequestMapping(value="/registe", method=RequestMethod.POST)
 	public void Registe(Model model, UserVO user) {
 		System.out.println("Ctrl registepostForm");
+		
 		UserVO result = service.create_user(user);
 		model.addAttribute("registeUser", result);
+	}
+	
+	@RequestMapping(value="/list", method=RequestMethod.GET)
+	public void list() {
+		
 	}
 
 }

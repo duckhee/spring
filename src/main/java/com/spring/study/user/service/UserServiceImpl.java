@@ -16,30 +16,35 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserVO login(UserVO user) {
 		// TODO Auto-generated method stub
+		System.out.println("service login");
 		return dao.loginRow(user);
 	}
 
 	@Override
 	public UserVO logout(UserVO user) {
 		// TODO Auto-generated method stub
+		System.out.println("service logout");
 		return dao.logoutRow(user);
 	}
 
 	@Override
 	public UserVO modify_user(UserVO user) {
 		// TODO Auto-generated method stub
+		System.out.println("service modify");
 		return dao.modify_userRow(user);
 	}
 
 	@Override
 	public UserVO delete_user(UserVO user) {
 		// TODO Auto-generated method stub
+		System.out.println("service delete");
 		return dao.delete_userRow(user);
 	}
 
 	@Override
 	public UserVO create_user(UserVO user) {
 		// TODO Auto-generated method stub
+		System.out.println("service create");
 		return dao.create_userRow(user);
 	}
 

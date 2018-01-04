@@ -2,6 +2,7 @@ package com.spring.study.user.dao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import com.spring.study.user.model.vo.UserVO;
@@ -12,6 +13,8 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	private SqlSession session;
 	
+	@Autowired
+	BCryptPasswordEncoder passwordEncoder;
 	
 	@Override
 	public UserVO loginRow(UserVO user) {

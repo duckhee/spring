@@ -332,7 +332,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="<c:url value='/board/list'/>"><i class="fa fa-circle-o"></i> 게시판 </a></li>
             <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
@@ -505,7 +505,7 @@
         404 Error Page
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<c:url value='/'/>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Examples</a></li>
         <li class="active">404 error</li>
       </ol>
@@ -759,3 +759,4 @@
 <script src="<c:url value='/resources/dist/js/demo.js'/>"></script>
 </body>
 </html>
+       
