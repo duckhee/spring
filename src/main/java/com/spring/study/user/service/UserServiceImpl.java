@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
 	private UserDao dao;
 	
 	@Override
-	public UserVO login(UserVO user) {
+	public UserVO login(UserVO user) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("service login");
 		return dao.loginRow(user);
@@ -42,10 +42,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserVO create_user(UserVO user) {
+	public void create_user(UserVO user) {
 		// TODO Auto-generated method stub
 		System.out.println("service create");
-		return dao.create_userRow(user);
+		 dao.create_userRow(user);
 	}
 
 }

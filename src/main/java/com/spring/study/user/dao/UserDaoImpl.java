@@ -17,10 +17,11 @@ public class UserDaoImpl implements UserDao {
 	BCryptPasswordEncoder passwordEncoder;
 	
 	@Override
-	public UserVO loginRow(UserVO user) {
+	public UserVO loginRow(UserVO user) throws Exception{
 		// TODO Auto-generated method stub
 		System.out.println("loginRow>>>>>>>>>>>"+ user +'\n');
-		return session.selectOne("login", user);
+		UserVO result = session.selectOne("loginUser", user);
+		return result;
 	}
 
 	@Override
@@ -38,10 +39,10 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public UserVO create_userRow(UserVO user) {
+	public void create_userRow(UserVO user) {
 		// TODO Auto-generated method stub
 		System.out.println("createRow>>>>>>>>>>>"+ user +'\n');
-		return null;
+		session.insert("create_user", user);
 	}
 
 	@Override

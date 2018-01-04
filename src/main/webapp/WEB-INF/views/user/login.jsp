@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>AdminLTE 2 | Log in</title>
+    <title>Log in</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="<c:url value='/resources/bootstrap/css/bootstrap.min.css' /> " rel="stylesheet" type="text/css" />
@@ -27,28 +27,36 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="/resources/index2.html"><b>Spring</b>Project</a>
+        <a href="<c:url value='/'/>"><b>Spring</b>Project</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
 <form action="login" method="post">
   <div class="form-group has-feedback">
-    <input type="text" name="id" class="form-control" placeholder="USER ID"/>
+    <input type="text" name="user_id" class="form-control" placeholder="USER ID"/>
     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
   </div>
   <div class="form-group has-feedback">
-    <input type="password" name="upw" class="form-control" placeholder="Password"/>
+    <input type="password" name="user_password" class="form-control" placeholder="Password"/>
     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
   </div>
   <div class="row">
     <div class="col-xs-8">    
       <div class="checkbox icheck">
+      <%-- <c:if test="${sessionScope.user.msg == 'fail'}">
+							<div style="font-size: 10px; color: red">아이디 또는 비밀번호가 일치하지 않습니다.</div>
+						</c:if>
+						<c:if test="${sessionScope.user.msg == 'logout'}">
+							<div style="font-size: 10px; color: red">로그아웃하였습니다.</div>
+						</c:if> --%>
         <label>
           <input type="checkbox" name="useCookie"> Remember Me
         </label>
-      </div>                        
+      </div>  
+                            
     </div><!-- /.col -->
+    
     <div class="col-xs-4">
       <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
     </div><!-- /.col -->

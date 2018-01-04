@@ -5,6 +5,7 @@ public class UserVO {
 	private int user_idx;
 	private String user_name;
 	private String user_phone;
+	private String user_email;
 	private String user_id;
 	private String user_password;
 	private String user_createtime;
@@ -13,6 +14,12 @@ public class UserVO {
 	private int	user_level;
 	
 	
+	public String getUser_email() {
+		return user_email;
+	}
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
+	}
 	public int getUser_idx() {
 		return user_idx;
 	}
@@ -72,8 +79,9 @@ public class UserVO {
 		// TODO Auto-generated constructor stub
 	}
 	public UserVO(int user_idx, String user_name, String user_phone, String user_id, String user_password,
-			String user_createtime, String user_updatetime, String user_lastlogin, int user_level) {
+			String user_createtime, String user_updatetime, String user_lastlogin, int user_level, String user_email) {
 		super();
+		this.user_email = user_email;
 		this.user_idx = user_idx;
 		this.user_name = user_name;
 		this.user_phone = user_phone;
@@ -84,6 +92,32 @@ public class UserVO {
 		this.user_lastlogin = user_lastlogin;
 		this.user_level = user_level;
 	}
+	public UserVO(String user_name, String user_phone, String user_email, String user_id, String user_password,
+			String user_createtime, String user_updatetime, String user_lastlogin, int user_level) {
+		super();
+		this.user_name = user_name;
+		this.user_phone = user_phone;
+		this.user_email = user_email;
+		this.user_id = user_id;
+		this.user_password = user_password;
+		this.user_createtime = user_createtime;
+		this.user_updatetime = user_updatetime;
+		this.user_lastlogin = user_lastlogin;
+		this.user_level = user_level;
+	}
+	public UserVO(String user_name, String user_phone, String user_email, String user_id, String user_password,
+			String user_createtime, String user_updatetime, String user_lastlogin) {
+		super();
+		this.user_name = user_name;
+		this.user_phone = user_phone;
+		this.user_email = user_email;
+		this.user_id = user_id;
+		this.user_password = user_password;
+		this.user_createtime = user_createtime;
+		this.user_updatetime = user_updatetime;
+		this.user_lastlogin = user_lastlogin;
+	}
+	
 	
 	
 }
