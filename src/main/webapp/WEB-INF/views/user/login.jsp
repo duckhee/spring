@@ -58,7 +58,7 @@
     </div><!-- /.col -->
     
     <div class="col-xs-4">
-      <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+      <button type="submit" class="btn btn-primary btn-block btn-flat" id="user_login">Sign In</button>
     </div><!-- /.col -->
   </div>
 </form>
@@ -76,7 +76,19 @@
     <script src="<c:url value='/resources/bootstrap/js/bootstrap.min.js' /> " type="text/javascript "></script>
     <!-- iCheck -->
     <script src="<c:url value='/resources/plugins/iCheck/icheck.min.js' />" type="text/javascript"></script>
+    <script type="text/javascript">
+
+	$(document).ready(function() {
+		$("#user_login").click(function() {
+			document.login_form.action = "login";
+			document.login_form.method = "POST";
+			document.login_form.submit();
+		});
+    
+    </script>
     <script>
+    
+    
       $(function () {
         $('input').iCheck({
           checkboxClass: 'icheckbox_square-blue',

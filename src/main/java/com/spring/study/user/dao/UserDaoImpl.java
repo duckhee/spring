@@ -1,13 +1,13 @@
 package com.spring.study.user.dao;
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
-
 import com.spring.study.user.model.vo.UserVO;
 
-@Repository("userDao")
+@Repository("UserDao")
 public class UserDaoImpl implements UserDao {
 
 	@Autowired
@@ -17,11 +17,17 @@ public class UserDaoImpl implements UserDao {
 	BCryptPasswordEncoder passwordEncoder;
 	
 	@Override
-	public UserVO loginRow(UserVO user) throws Exception{
+	public UserVO loginRow(UserVO user){
 		// TODO Auto-generated method stub
+		try {
 		System.out.println("loginRow>>>>>>>>>>>"+ user +'\n');
 		UserVO result = session.selectOne("loginUser", user);
+		System.out.println("loginRow>>>>>>>>>>>"+ result +'\n');
 		return result;
+		}catch(Exception e){
+			System.out.println("dao exception : " + e.toString());
+			return null;
+		}
 	}
 
 	@Override

@@ -3,14 +3,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.spring.study.user">
+<mapper namespace="com.spring.study.mapper.user">
  	<!-- session.selectOne("com.spring.acorn.mapper.user.login" , user) -->
- 	<select id="login" parameterType="user" resultType="user">
+<!--  	<select id="login" parameterType="user" resultType="user">
  		SELECT USER_ID, USER_PW, USER_NAME
  		FROM   USERS
  		WHERE  ID = #{id} AND UPW = #{upw}
 
- 	</select>
+ 	</select> -->
 	<insert id="create_user" parameterType="user">
 		INSERT INTO USERS (
 			user_id,
@@ -25,7 +25,7 @@
 			 
 		) VALUES(
 			#{user_id},
-			#{user_pw},
+			#{user_password},
 			#{user_name},
 			#{user_phone},
 			#{user_email},
@@ -45,9 +45,9 @@
 	
 		<!-- 로그인 검사 -->
 	<select id="loginUser" parameterType="user" resultType="user">
-		select *
-		from users
-		where user_id=#{user_id}
+		SELECT * 
+		FROM USERS
+		WHERE user_id=#{user_id}
 	</select>
 	
 		<!-- 이메일 중복 검사 -->

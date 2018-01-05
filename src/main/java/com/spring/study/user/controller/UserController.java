@@ -34,7 +34,7 @@ public class UserController {
 	private UserService service;
 	
 	@Autowired
-	BCryptPasswordEncoder passwordencoding;
+	BCryptPasswordEncoder passwordEncoder;
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String LoginForm(HttpSession session, Model model)
@@ -66,8 +66,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String Login(UserVO user, HttpServletRequest request, HttpServletResponse response){
+	public String Login(UserVO user, HttpServletRequest request, HttpServletResponse response) throws Exception{
 		System.out.println("Ctrl login");
+		
 		UserVO result;
 		String returnURL = "";
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -75,7 +76,7 @@ public class UserController {
 			result = service.login(user);
 			System.out.println("user : " + user.toString());
 			System.out.println("result : " + result.toString());
-			if (passwordencoding.matches(user.getUser_password(), result.getUser_password())) {
+			if (passwordEncoder.matches(user.getUser_password(), result.getUser_password())) {
 				System.out.println("login sucess");
 				map.put("user_id", result.getUser_id());
 				map.put("user_level", result.getUser_level());
@@ -89,7 +90,7 @@ public class UserController {
 			}
 		}catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("exception : " + e.getStackTrace());
+			System.out.println("exception ctrl : " + e.toString());
 			System.out.println("login fail");
 			map.put("msg", "fail");
 			request.getSession().setAttribute("user", map);
@@ -124,9 +125,9 @@ public class UserController {
 		Date date = new Date();
 		SimpleDateFormat date_format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String current_time = date_format.format(date);
-		String encryptPassword = passwordencoding.encode(user_password);
+		String encryptPassword = passwordEncoder.encode(user_password);
 		System.out.println("pw : " + encryptPassword);
-		UserVO uservo = new UserVO(user_name, user_phone, user_id, encryptPassword, current_time, current_time, current_time, user_email);
+		UserVO uservo = new UserVO(user_name, user_phone, user_email, user_id, encryptPassword, current_time, current_time, current_time, 5);
 		service.create_user(uservo);
 		view.setViewName("redirect:/member/login");
 		return view;

@@ -10,14 +10,20 @@ import com.spring.study.user.model.vo.UserVO;
 @Service("UserService")
 public class UserServiceImpl implements UserService {
 
-	@Resource(name="userDao")
+	@Resource(name="UserDao")
 	private UserDao dao;
 	
 	@Override
-	public UserVO login(UserVO user) throws Exception {
+	public UserVO login(UserVO user) {
 		// TODO Auto-generated method stub
 		System.out.println("service login");
+		try {
 		return dao.loginRow(user);
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("login exception : "+e.toString());
+			return null;
+		}
 	}
 
 	@Override
