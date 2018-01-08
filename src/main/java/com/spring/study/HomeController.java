@@ -24,7 +24,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		
+		System.out.println("main page");
 		
 		
 		
@@ -33,6 +33,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/", method = RequestMethod.POST)
 	public String post_home(Locale locale, Model model) {
+		System.out.println("main page post");
 		return "redirect:/";
 	}
 	

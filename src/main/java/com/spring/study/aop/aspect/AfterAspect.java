@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("after")
 public class AfterAspect {
 	
-	@After("execution(public * com.spring.acorn..*Impl.e*(..))")
+	@After("execution(public * com.spring.study..*Impl.e*(..))")
 	public void after(JoinPoint point) {
 		String method = point.getSignature().getName() ; 
 		Object obj    = point.getTarget() ; 

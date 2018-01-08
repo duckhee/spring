@@ -10,13 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.spring.study.board.model.vo.ReplyVO;
 import com.spring.study.board.model.vo.BoardVO;
 import com.spring.study.board.service.BoardService;
 
 @Controller
-@RequestMapping(value="board")
+@RequestMapping("/board")
 public class BoardController {
 
 	@Resource(name="BoardService")
