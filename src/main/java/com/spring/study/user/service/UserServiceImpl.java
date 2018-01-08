@@ -54,4 +54,22 @@ public class UserServiceImpl implements UserService {
 		 dao.create_userRow(user);
 	}
 
+	@Override
+	public int checkSignup(String user_id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int checkSignup_email(String user_email) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int count_user2(String keyword) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

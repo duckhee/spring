@@ -9,4 +9,8 @@ public interface UserService {
 	public UserVO modify_user(UserVO user);
 	public UserVO delete_user(UserVO user);
 	public void create_user(UserVO user);
+	public int checkSignup(String user_id);
+	public int checkSignup_email(String user_email);
+	public int count_user2(String keyword );
+	
 }

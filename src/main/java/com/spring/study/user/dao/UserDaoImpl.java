@@ -20,8 +20,8 @@ public class UserDaoImpl implements UserDao {
 	public UserVO loginRow(UserVO user){
 		// TODO Auto-generated method stub
 		try {
-		System.out.println("loginRow>>>>>>>>>>>"+ user +'\n');
-		UserVO result = session.selectOne("loginUser", user);
+		System.out.println("loginRow>>>>>>>>>>>"+ user.toString() +'\n');
+		UserVO result = session.selectOne("login_user", user);
 		System.out.println("loginRow>>>>>>>>>>>"+ result +'\n');
 		return result;
 		}catch(Exception e){
@@ -56,6 +56,24 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		System.out.println("deleteRow>>>>>>>>>>>"+ user +'\n');
 		return null;
+	}
+
+	@Override
+	public int checkSignup(String user_id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int checkSignup_email(String user_email) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int count_user2(String keyword) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

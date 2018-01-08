@@ -118,6 +118,16 @@ public class UserVO {
 		this.user_lastlogin = user_lastlogin;
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "UserVO [user_id=" + user_id + ", user_pw=" + user_password + ", user_name=" + user_name + ", user_email="
+		+ user_email + ", user_phone=" + user_phone +  ", user_createtime="
+		+ user_createtime + ", user_updatetime=" + user_updatetime + ", user_lastlogin=" + user_lastlogin
+		+ ", user_level=" + user_level + "]";
+
+	}
+	
 	
 	
 }
