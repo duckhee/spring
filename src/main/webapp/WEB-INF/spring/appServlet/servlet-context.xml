@@ -33,9 +33,7 @@
 	
 	<beans:bean id="logout" 
 				class="com.spring.study.interceptor.LogoutInterceptor" /> 			
-	 -->
-	
-	<!-- 
+	 
 	<interceptors>
 		<interceptor>
 			<mapping path="/pre.do" />
@@ -43,7 +41,7 @@
 			<beans:ref bean="sample" />
 		</interceptor>
 		<interceptor>
-			<mapping path="/user/login" />
+			<mapping path="/member/login" />
 			<beans:ref bean="login" />
 		</interceptor>
 		<interceptor>
@@ -55,6 +53,6 @@
 			<beans:ref bean="logout" />
 		</interceptor>
 	</interceptors>
-	 -->
 	
+ -->	
 </beans:beans>

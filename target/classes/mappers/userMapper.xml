@@ -5,13 +5,35 @@
   
 <mapper namespace="com.spring.study.mapper.user">
  	<!-- session.selectOne("com.spring.acorn.mapper.user.login" , user) -->
- 	<select id="login" parameterType="user" resultType="user">
- 		SELECT ID, UPW, UNAME, UPOINT
- 		FROM   TBL_USER2
+<!--  	<select id="login" parameterType="user" resultType="user">
+ 		SELECT USER_ID, USER_PW, USER_NAME
+ 		FROM   USERS
  		WHERE  ID = #{id} AND UPW = #{upw}
- 	</select>
+
+ 	</select> -->
 	<insert id="create_user" parameterType="user">
-		INSERT INTO 
+		INSERT INTO USERS (
+			user_id,
+			user_pw,
+			user_name,
+			user_phone,
+			user_email,
+			user_level,
+			user_createtime,
+			user_updatetime,
+			user_lastlogin
+			 
+		) VALUES(
+			#{user_id},
+			#{user_password},
+			#{user_name},
+			#{user_phone},
+			#{user_email},
+			#{user_level},
+			#{user_createtime},
+			#{user_updatetime},
+			#{user_lastlogin}
+		)
 	
 	</insert>
 	<delete id="delete_user" parameterType="user">
@@ -20,5 +42,33 @@
 	<update id="modify_user" parameterType="user">
 	
 	</update>
+	
+		<!-- 로그인 검사 -->
+	<select id="loginUser" parameterType="user" resultType="user">
+		SELECT * 
+		FROM USERS
+		WHERE user_id=#{user_id}
+	</select>
+	
+		<!-- 이메일 중복 검사 -->
+	<select id="checkSignup_email" parameterType="String"
+		resultType="int">
+		select count(*)
+		from users
+		where user_email=#{user_email}
+	</select>
+	<!-- search -->
+		<sql id="search">
+            WHERE user_id LIKE CONCAT('%',#{keyword},'%')
+            OR user_name LIKE CONCAT('%',#{keyword},'%')
+            OR user_email LIKE CONCAT('%',#{keyword},'%')
+	</sql>
+	
+		<select id="search_id" parameterType="user" resultType="user">
+		select *
+		from iof_users
+		WHERE user_id LIKE CONCAT('%',#{id},'%')
+	</select>
+	
 </mapper>  
 
