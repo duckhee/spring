@@ -76,7 +76,7 @@ public class UserController {
 			result = service.login(user);
 			System.out.println("user : " + user.toString());
 			System.out.println("result : " + result.toString());
-			if (passwordEncoder.matches(user.getUser_password(), result.getUser_password())) {
+			if (passwordEncoder.matches(user.getuser_pw(), result.getuser_pw())) {
 				System.out.println("login sucess");
 				map.put("user_id", result.getUser_id());
 				map.put("user_level", result.getUser_level());
@@ -108,7 +108,7 @@ public class UserController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("msg", "logout");
 		request.getSession().setAttribute("user", map);
-		return "redirect:/user/login";
+		return "redirect:/member/login";
 	}
 	
 	@SuppressWarnings({ "unused", "unchecked" })

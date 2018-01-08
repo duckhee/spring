@@ -111,6 +111,13 @@ public class BoardVO {
 
 	public void setRlist(List<ReplyVO> rlist) {
 		this.rlist = rlist;
+	}
+
+
+	@Override
+	public String toString() {
+		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
+				+ regdate + ", viewcnt=" + viewcnt + ", rlist=" + rlist + "]";
 	} 
 	
 	

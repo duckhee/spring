@@ -6,7 +6,7 @@
 <mapper namespace="com.spring.study.mapper.board">
  	<select id="list"	resultType="board">
  		SELECT 	BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
- 		FROM 	TBL_BOARD 
+ 		FROM 	tbl_board 
  	</select>
  	<insert id="insert" parameterType="board">
  		INSERT INTO TBL_BOARD

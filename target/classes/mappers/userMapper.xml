@@ -44,7 +44,7 @@
 	</update>
 	
 		<!-- 로그인 검사 -->
-	<select id="loginUser" parameterType="user" resultType="user">
+	<select id="login_user" parameterType="user" resultType="user">
 		SELECT * 
 		FROM USERS
 		WHERE user_id=#{user_id}

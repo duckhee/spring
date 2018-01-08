@@ -20,7 +20,7 @@ public class UserDaoImpl implements UserDao {
 	public UserVO loginRow(UserVO user){
 		// TODO Auto-generated method stub
 		try {
-		System.out.println("loginRow>>>>>>>>>>>"+ user.toString() +'\n');
+		System.out.println("loginRow user>>>>>>>>>>>"+ user.toString() +'\n');
 		UserVO result = session.selectOne("login_user", user);
 		System.out.println("loginRow>>>>>>>>>>>"+ result +'\n');
 		return result;
