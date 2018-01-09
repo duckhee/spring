@@ -90,9 +90,10 @@
 							</c:if>
 
 						</ul>
-					</div>
-
-<!-- /.content -->
+					</section>
+				<!-- /.content -->
+				</div>
+				<!-- /.content-wrapper -->
 
 <form id="jobForm">
   <input type='hidden' name="page" value=${pageManager.currentPage}>
