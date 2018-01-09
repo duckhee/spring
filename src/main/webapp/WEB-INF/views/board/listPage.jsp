@@ -23,7 +23,7 @@
 						<option value="writer">작성자</option>
 					</select> 
 					<input type="text" name='searchKeyword' id="searchKeyword">
-					<button id='searchBtn'>Search</button>
+					<button id='searchBtn'><i class="fa fa-fw fa-search"></i>Search</button>
 					<!-- 기존 -->
 					<button id='newBtn'>New Board</button>
 				</div>
