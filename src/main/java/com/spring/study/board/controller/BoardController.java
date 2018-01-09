@@ -48,15 +48,17 @@ public class BoardController {
 		return "redirect:/board/listPage" ; 
 	}
 	
-	@RequestMapping(value="/detail", method=RequestMethod.GET)
-	public String detail_list(Model model) {
-		return "";
+	/*@RequestMapping(value="/detail", method=RequestMethod.GET)
+	public String detail_list(BoardVO obj, Model model) {
+		BoardVO board = service.read(obj);
+		model.addAttribute("board", board);
+		return "/board/readPage";
 	}
 	@RequestMapping(value="/detail", method=RequestMethod.POST)
 	public String postdetail_list(Model model) {
 		return "";
 	}
-	
+	*/
 	
 	@RequestMapping(value="/readPage" , method=RequestMethod.GET)
 	public String read(BoardVO obj, Model model){
