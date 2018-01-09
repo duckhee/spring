@@ -1,4 +1,4 @@
-package com.study.board.controller;
+package com.spring.study.board.controller;
 
 
 import java.util.List;
@@ -14,10 +14,14 @@ import com.spring.study.board.model.vo.ReplyVO;
 import com.spring.study.board.model.vo.BoardVO;
 import com.spring.study.board.service.BoardService;
 
+
+
 @Controller
 @RequestMapping("/board")
 public class BoardController {
 
+	
+	
 	@Resource(name="BoardService")
 	private BoardService service;
 	
@@ -26,6 +30,7 @@ public class BoardController {
 	{
 		System.out.println("list page controllers");
 		List<BoardVO> list = service.list();
+		System.out.println("list : " + list.toString());
 		model.addAttribute("list", list);
 		return "board/listPage";
 	}
