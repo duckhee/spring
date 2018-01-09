@@ -77,13 +77,13 @@
     <!-- iCheck -->
     <script src="<c:url value='/resources/plugins/iCheck/icheck.min.js' />" type="text/javascript"></script>
     <script type="text/javascript">
-
+/* 
 	$(document).ready(function() {
 		$("#user_login").click(function() {
 			document.login_form.action = "login";
 			document.login_form.method = "POST";
 			document.login_form.submit();
-		});
+		}); */
     
     </script>
     <script>

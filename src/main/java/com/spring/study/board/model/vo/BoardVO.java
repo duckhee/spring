@@ -20,7 +20,7 @@ COMMIT ;
 
 mysql
 CREATE TABLE tbl_board(
-		bno		int PRIMARY KEY,
+		bno		int PRIMARY KEY autoincreament,
 		title	VARCHAR(50),
 		content	text(2000),
 		writer	varchar(50),

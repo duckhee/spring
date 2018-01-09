@@ -6,8 +6,9 @@
 <mapper namespace="com.spring.study.mapper.board">
  	<select id="list" resultType="board">
  		SELECT 	*
- 		FROM 	TBL_BOARD 
+ 		FROM TBL_BOARD
  	</select>
+ 	
  	<insert id="insert" parameterType="board">
  		INSERT INTO TBL_BOARD
  		VALUES(	BOARDSEQ.NEXTVAL ,
@@ -18,22 +19,26 @@
  				DEFAULT,
  				DEFAULT ) 
  	</insert>
+ 	
  	<select id="read" 	parameterType="board"
  						resultType="board">
 		SELECT 	BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
  		FROM 	TBL_BOARD
  		WHERE	BNO = #{bno}	
  	</select>
+ 	
  	<delete id="remove" parameterType="board">
  		DELETE 	
  		FROM 	TBL_BOARD
  		WHERE 	BNO = #{bno} 
  	</delete>
+ 	
  	<update id="modify" parameterType="board">
  		UPDATE TBL_BOARD
  		SET TITLE = #{title} , CONTENT = #{content}
  		WHERE 	BNO = #{bno} 
  	</update>
+ 	
  	<select id="search"	resultType="board">
  		SELECT 	BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
  		FROM 	TBL_BOARD
@@ -59,6 +64,7 @@
  		FROM 	TBL_REPLY 
  		WHERE   BNO = #{bno}
  	</select>
+ 	
  	<insert id="rInsert" parameterType="reply">
  		INSERT INTO TBL_REPLY
  		VALUES(	REPLYSEQ.NEXTVAL ,
@@ -67,6 +73,7 @@
  				#{rcontent} 
  		) 
  	</insert>
+ 	
  	<delete id="rRemove" parameterType="reply">
  		DELETE TBL_REPLY
  		WHERE  RSEQ = #{rseq} 

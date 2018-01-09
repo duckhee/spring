@@ -20,7 +20,7 @@ public class BoardDaoImpl implements BoardDao {
 	public List<BoardVO> listRow() {
 		// TODO Auto-generated method stub
 		System.out.println("Dao listRow");
-		return session.selectList("board");
+		return session.selectList("com.spring.study.mapper.board.list");
 	}
 
 	@Override

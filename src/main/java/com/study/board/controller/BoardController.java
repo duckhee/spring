@@ -2,24 +2,28 @@ package com.study.board.controller;
 
 
 import java.util.List;
-
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.spring.study.board.model.vo.ReplyVO;
 import com.spring.study.board.model.vo.BoardVO;
+import com.spring.study.board.model.vo.ReplyVO;
 import com.spring.study.board.service.BoardService;
 
+
 @Controller
-@RequestMapping("/board")
+@RequestMapping(value="/board")
 public class BoardController {
 
 	@Resource(name="BoardService")
 	private BoardService service;
+	
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String cell() {
+		return "redirect:/";
+	}
 	
 	@RequestMapping(value="/listPage")
 	public String list(Model model)
