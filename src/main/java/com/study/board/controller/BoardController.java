@@ -21,7 +21,7 @@ public class BoardController {
 	@Resource(name="BoardService")
 	private BoardService service;
 	
-	@RequestMapping("/listPage")
+	@RequestMapping(value="/listPage")
 	public String list(Model model)
 	{
 		System.out.println("list page controllers");

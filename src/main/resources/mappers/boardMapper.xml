@@ -4,9 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.spring.study.mapper.board">
- 	<select id="list"	resultType="board">
- 		SELECT 	BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
- 		FROM 	tbl_board 
+ 	<select id="list" resultType="board">
+ 		SELECT 	*
+ 		FROM 	TBL_BOARD 
  	</select>
  	<insert id="insert" parameterType="board">
  		INSERT INTO TBL_BOARD
@@ -15,6 +15,7 @@
  				#{content} ,
  				#{writer} ,
  				DEFAULT ,
+ 				DEFAULT,
  				DEFAULT ) 
  	</insert>
  	<select id="read" 	parameterType="board"
