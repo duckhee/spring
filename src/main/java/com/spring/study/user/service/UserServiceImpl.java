@@ -10,7 +10,7 @@ import com.spring.study.user.model.vo.UserVO;
 @Service("UserService")
 public class UserServiceImpl implements UserService {
 
-	@Resource(name="AdminUserDao")
+	@Resource(name="UserDao")
 	private UserDao dao;
 	
 	@Override
