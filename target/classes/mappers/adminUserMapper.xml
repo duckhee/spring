@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.spring.study.mapper.user">
+	<insert id="admin_create" parameterType="user">
+		INSERT INTO USERS (
+			user_id,
+			user_pw,
+			user_name,
+			user_phone,
+			user_email,
+			user_level,
+			user_createtime,
+			user_updatetime,
+			user_lastlogin
+		) VALUES (
+			#{user_id},
+			#{user_password},
+			#{user_name},
+			#{user_phone},
+			#{user_email},
+			#{user_level},
+			#{user_createtime},
+			#{user_updatetime},
+			#{user_lastlogin}
+		)
+	</insert>
+	<!-- USER ALL LIST -->
+	<select id="admin_userlist" parameterType="user" resultType="user">
+		SELECT *
+		 FROM USERS 
+	</select>
+	
+		<!-- 로그인 검사 -->
+	<select id="admin_login" parameterType="user" resultType="user">
+		SELECT * 
+		FROM USERS
+		WHERE user_id=#{user_id} AND USER_LEVEL = 1
+	</select>
+	
+		<!-- search -->
+		<sql id="search">
+            WHERE user_id LIKE CONCAT('%',#{keyword},'%')
+            OR user_name LIKE CONCAT('%',#{keyword},'%')
+            OR user_email LIKE CONCAT('%',#{keyword},'%')
+	</sql>
+	
+		<select id="search_id" parameterType="user" resultType="user">
+		select *
+		from users
+		WHERE user_id LIKE CONCAT('%',#{id},'%')
+	</select>
+	
+	
+	
+
+</mapper>

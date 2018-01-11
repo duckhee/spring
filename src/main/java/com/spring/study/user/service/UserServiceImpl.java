@@ -57,19 +57,22 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int checkSignup(String user_id) {
 		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("service check sign up");
+		return dao.checkSignup(user_id);
 	}
 
 	@Override
 	public int checkSignup_email(String user_email) {
 		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("service check sign up email");
+		return dao.checkSignup_email(user_email);
 	}
 
 	@Override
-	public int count_user2(String keyword) {
+	public int counter_user(String keyword) {
 		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("service check count user");
+		return dao.counter_userRow(keyword);
 	}
 
 }

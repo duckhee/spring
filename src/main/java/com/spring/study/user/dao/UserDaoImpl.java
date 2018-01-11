@@ -71,9 +71,10 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public int count_user2(String keyword) {
+	public int counter_userRow(String keyword) {
 		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("counter user row>>>>>>>>>>>"+ keyword +'\n');
+		return session.selectOne("counter_user", keyword);
 	}
 
 }

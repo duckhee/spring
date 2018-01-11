@@ -10,6 +10,6 @@ public interface UserDao {
 	public UserVO delete_userRow(UserVO user);
 	public int checkSignup(String user_id);
 	public int checkSignup_email(String user_email);
-	public int count_user2(String keyword );
+	public int counter_userRow(String keyword );
 	
 }

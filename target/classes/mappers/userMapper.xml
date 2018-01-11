@@ -50,13 +50,44 @@
 		WHERE user_id=#{user_id}
 	</select>
 	
-		<!-- 이메일 중복 검사 -->
+	<!-- 아이디 중복 검사 -->
+	<select id="checkSignup" parameterType="String" resultType="int">
+		select count(*)
+		from iof_users
+		where user_id=#{user_id}
+	</select>
+
+	<!-- 이메일 중복 검사 -->
 	<select id="checkSignup_email" parameterType="String"
 		resultType="int">
 		select count(*)
 		from users
 		where user_email=#{user_email}
 	</select>
+	
+	<!-- 회원 정보 전체 리스트 -->
+	<select id="getAllUserList" resultType="user">
+		select *
+		from iof_users
+	</select>
+	
+	<!-- 전체 회원 수 -->
+	<select id="counter_user" resultType="int">
+		select count(*)
+		from iof_users
+		<include refid="search"></include>
+	</select>
+	
+	<!-- 페이징 처리 수 -->
+	<select id="getRead_page" parameterType="map" resultType="user">
+		SELECT * 
+		FROM iof_users
+		<include refid="search"></include>
+		ORDER BY user_createtime desc
+		LIMIT #{page}, 10 
+	</select>
+	
+	
 	<!-- search -->
 		<sql id="search">
             WHERE user_id LIKE CONCAT('%',#{keyword},'%')

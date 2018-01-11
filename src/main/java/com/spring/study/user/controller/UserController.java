@@ -133,9 +133,5 @@ public class UserController {
 		return view;
 	}
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public void list() {
-		
-	}
 
 }

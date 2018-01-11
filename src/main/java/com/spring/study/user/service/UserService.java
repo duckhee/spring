@@ -11,6 +11,6 @@ public interface UserService {
 	public void create_user(UserVO user);
 	public int checkSignup(String user_id);
 	public int checkSignup_email(String user_email);
-	public int count_user2(String keyword );
+	public int counter_user(String keyword );
 	
 }
