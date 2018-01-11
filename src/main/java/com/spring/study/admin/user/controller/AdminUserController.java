@@ -51,4 +51,20 @@ public class AdminUserController {
 		
 		return "";
 	}
+	
+	@RequestMapping(value="/userdelete", method = RequestMethod.GET)
+	public String UserDestoryForm() {
+		
+		System.out.println("admin user destory form");
+		
+		return "";
+	}
+	
+	@RequestMapping(value="/userdelete", method = RequestMethod.POST)
+	public String UserDestory() {
+		
+		System.out.println("admin user destory");
+		
+		return "";
+	}
 }
