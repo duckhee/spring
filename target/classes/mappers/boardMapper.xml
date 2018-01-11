@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.spring.study.mapper.board">
+ 	<select id="list" resultType="board">
+ 		SELECT 	*
+ 		FROM TBL_BOARD
+ 	</select>
+ 	
+ 	<insert id="insert" parameterType="board">
+ 		INSERT INTO TBL_BOARD
+ 		VALUES(	BOARDSEQ.NEXTVAL ,
+ 				#{title} ,
+ 				#{content} ,
+ 				#{writer} ,
+ 				DEFAULT ,
+ 				DEFAULT,
+ 				DEFAULT ) 
+ 	</insert>
+ 	
+ 	<select id="read" 	parameterType="board"
+ 						resultType="board">
+		SELECT 	BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
+ 		FROM 	TBL_BOARD
+ 		WHERE	BNO = #{bno}	
+ 	</select>
+ 	
+ 	<delete id="remove" parameterType="board">
+ 		DELETE 	
+ 		FROM 	TBL_BOARD
+ 		WHERE 	BNO = #{bno} 
+ 	</delete>
+ 	
+ 	<update id="modify" parameterType="board">
+ 		UPDATE TBL_BOARD
+ 		SET TITLE = #{title} , CONTENT = #{content}
+ 		WHERE 	BNO = #{bno} 
+ 	</update>
+ 	
+ 	<select id="search"	resultType="board">
+ 		SELECT 	BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
+ 		FROM 	TBL_BOARD
+ 		<where>
+ 			<if test="type == 'title'">
+ 			TITLE  LIKE '%'||#{keyword}||'%'
+ 			</if>
+ 			<if test="type == 'writer'">
+ 			WRITER LIKE '%'||#{keyword}||'%'
+ 			</if>
+ 		</where>  
+ 	</select>
+ 	
+ 	<update id="upcnt">
+ 		UPDATE TBL_BOARD 
+		SET VIEWCNT = VIEWCNT + 1
+		WHERE BNO = #{bno}
+ 	</update>
+ 	
+ 	<!-- reply -->
+ 	<select id="readReply"	resultType="reply">
+ 		SELECT 	RSEQ, BNO, RWRITER,  RCONTENT 
+ 		FROM 	TBL_REPLY 
+ 		WHERE   BNO = #{bno}
+ 	</select>
+ 	
+ 	<insert id="rInsert" parameterType="reply">
+ 		INSERT INTO TBL_REPLY
+ 		VALUES(	REPLYSEQ.NEXTVAL ,
+ 				#{bno} ,
+ 				#{rwriter} ,
+ 				#{rcontent} 
+ 		) 
+ 	</insert>
+ 	
+ 	<delete id="rRemove" parameterType="reply">
+ 		DELETE TBL_REPLY
+ 		WHERE  RSEQ = #{rseq} 
+ 	</delete>
+ 	
+ 	
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
