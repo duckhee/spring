@@ -49,6 +49,11 @@ public class ReplyVO {
 	}
 	public void setRcontent(String rcontent) {
 		this.rcontent = rcontent;
+	}
+	
+	@Override
+	public String toString() {
+		return "ReplyVO [rseq=" + rseq + ", bno=" + bno + ", rwriter=" + rwriter + ", rcontent=" + rcontent + "]";
 	} 
 
 }

@@ -1,57 +1,48 @@
-package com.spring.study.user.service;
+package com.spring.study.admin.user.service;
+
+import java.util.List;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.spring.study.user.dao.UserDao;
+import com.spring.study.admin.user.dao.AdminUserDao;
 import com.spring.study.user.model.vo.UserVO;
 
-@Service("UserService")
-public class UserServiceImpl implements UserService {
+@Service("AdminUserService")
+public class AdminUserServiceImpl implements AdminUserService {
 
 	@Resource(name="AdminUserDao")
-	private UserDao dao;
+	private AdminUserDao dao;
 	
 	@Override
 	public UserVO login(UserVO user) {
 		// TODO Auto-generated method stub
-		System.out.println("service login");
-		try {
-		return dao.loginRow(user);
-		}catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("login exception : "+e.toString());
-			return null;
-		}
+		return null;
 	}
 
 	@Override
 	public UserVO logout(UserVO user) {
 		// TODO Auto-generated method stub
-		System.out.println("service logout");
-		return dao.logoutRow(user);
+		return null;
 	}
 
 	@Override
 	public UserVO modify_user(UserVO user) {
 		// TODO Auto-generated method stub
-		System.out.println("service modify");
-		return dao.modify_userRow(user);
+		return null;
 	}
 
 	@Override
 	public UserVO delete_user(UserVO user) {
 		// TODO Auto-generated method stub
-		System.out.println("service delete");
-		return dao.delete_userRow(user);
+		return null;
 	}
 
 	@Override
 	public void create_user(UserVO user) {
 		// TODO Auto-generated method stub
-		System.out.println("service create");
-		 dao.create_userRow(user);
+
 	}
 
 	@Override
@@ -70,6 +61,12 @@ public class UserServiceImpl implements UserService {
 	public int count_user2(String keyword) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public List<UserVO> list() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

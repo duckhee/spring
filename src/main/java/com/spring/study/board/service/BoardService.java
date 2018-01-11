@@ -7,7 +7,7 @@ import com.spring.study.board.model.vo.BoardVO;
 
 public interface BoardService {
 	
-	public List<BoardVO> list();
+	public List<BoardVO>    list();
 	public int				insert(BoardVO obj);
 	public BoardVO			read(BoardVO obj);
 	public int				remove(BoardVO obj);
