@@ -53,7 +53,7 @@
 	<!-- 아이디 중복 검사 -->
 	<select id="checkSignup" parameterType="String" resultType="int">
 		select count(*)
-		from iof_users
+		from users
 		where user_id=#{user_id}
 	</select>
 
@@ -81,7 +81,7 @@
 	<!-- 페이징 처리 수 -->
 	<select id="getRead_page" parameterType="map" resultType="user">
 		SELECT * 
-		FROM iof_users
+		FROM users
 		<include refid="search"></include>
 		ORDER BY user_createtime desc
 		LIMIT #{page}, 10 
@@ -97,7 +97,7 @@
 	
 		<select id="search_id" parameterType="user" resultType="user">
 		select *
-		from iof_users
+		from users
 		WHERE user_id LIKE CONCAT('%',#{id},'%')
 	</select>
 	

@@ -4,7 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.spring.study.mapper.user">
-	<insert id="admin_create" parameterType="user">
+ 	<!-- session.selectOne("com.spring.acorn.mapper.user.login" , user) -->
+<!--  	<select id="login" parameterType="user" resultType="user">
+ 		SELECT USER_ID, USER_PW, USER_NAME
+ 		FROM   USERS
+ 		WHERE  ID = #{id} AND UPW = #{upw}
+
+ 	</select> -->
+	<insert id="create_user" parameterType="user">
 		INSERT INTO USERS (
 			user_id,
 			user_pw,
@@ -15,7 +22,8 @@
 			user_createtime,
 			user_updatetime,
 			user_lastlogin
-		) VALUES (
+			 
+		) VALUES(
 			#{user_id},
 			#{user_password},
 			#{user_name},
@@ -26,21 +34,61 @@
 			#{user_updatetime},
 			#{user_lastlogin}
 		)
+	
 	</insert>
-	<!-- USER ALL LIST -->
-	<select id="admin_userlist" parameterType="user" resultType="user">
-		SELECT *
-		 FROM USERS 
-	</select>
+	<delete id="delete_user" parameterType="user">
+	
+	</delete>
+	<update id="modify_user" parameterType="user">
+	
+	</update>
 	
 		<!-- 로그인 검사 -->
-	<select id="admin_login" parameterType="user" resultType="user">
+	<select id="login_user" parameterType="user" resultType="user">
 		SELECT * 
 		FROM USERS
-		WHERE user_id=#{user_id} AND USER_LEVEL = 1
+		WHERE user_id=#{user_id}
 	</select>
 	
-		<!-- search -->
+	<!-- 아이디 중복 검사 -->
+	<select id="checkSignup" parameterType="String" resultType="int">
+		select count(*)
+		from users
+		where user_id=#{user_id}
+	</select>
+
+	<!-- 이메일 중복 검사 -->
+	<select id="checkSignup_email" parameterType="String"
+		resultType="int">
+		select count(*)
+		from users
+		where user_email=#{user_email}
+	</select>
+	
+	<!-- 회원 정보 전체 리스트 -->
+	<select id="getAllUserList" resultType="user">
+		select *
+		from iof_users
+	</select>
+	
+	<!-- 전체 회원 수 -->
+	<select id="counter_user" resultType="int">
+		select count(*)
+		from iof_users
+		<include refid="search"></include>
+	</select>
+	
+	<!-- 페이징 처리 수 -->
+	<select id="getRead_page" parameterType="map" resultType="user">
+		SELECT * 
+		FROM users
+		<include refid="search"></include>
+		ORDER BY user_createtime desc
+		LIMIT #{page}, 10 
+	</select>
+	
+	
+	<!-- search -->
 		<sql id="search">
             WHERE user_id LIKE CONCAT('%',#{keyword},'%')
             OR user_name LIKE CONCAT('%',#{keyword},'%')
@@ -53,7 +101,5 @@
 		WHERE user_id LIKE CONCAT('%',#{id},'%')
 	</select>
 	
-	
-	
+</mapper>  
 
-</mapper>
