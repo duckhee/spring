@@ -68,13 +68,13 @@
 	<!-- 회원 정보 전체 리스트 -->
 	<select id="getAllUserList" resultType="user">
 		select *
-		from iof_users
+		from users
 	</select>
 	
 	<!-- 전체 회원 수 -->
 	<select id="counter_user" resultType="int">
 		select count(*)
-		from iof_users
+		from users
 		<include refid="search"></include>
 	</select>
 	
