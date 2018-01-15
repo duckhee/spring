@@ -19,7 +19,7 @@ public class AdminBoardServiceImpl implements AdminBoardService {
 	@Override
 	public List<BoardVO> admin_list() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.admin_listRow();
 	}
 
 	@Override
