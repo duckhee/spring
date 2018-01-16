@@ -9,14 +9,12 @@
  		FROM 	TBL_BOARD 
  	</select>
  	<insert id="insert" parameterType="board">
- 		INSERT INTO TBL_BOARD
- 		VALUES(	BOARDSEQ.NEXTVAL ,
+ 		INSERT INTO TBL_BOARD(title, content, writer)
+ 		VALUES(
  				#{title} ,
  				#{content} ,
- 				#{writer} ,
- 				DEFAULT ,
- 				DEFAULT,
- 				DEFAULT ) 
+ 				#{writer} 
+ 				) 
  	</insert>
  	<select id="read" 	parameterType="board"
  						resultType="board">
