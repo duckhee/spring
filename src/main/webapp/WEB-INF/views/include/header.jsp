@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html>
@@ -35,7 +36,7 @@
       
       <header class="main-header">
         <!-- Logo -->
-        <a href="<c:url value = '/resources/index2.html' /> " class="logo">
+        <a href="<c:url value = '/' /> " class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>LT</span>
           <!-- logo for regular state and mobile devices -->
@@ -273,7 +274,8 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="/user/logout.do" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="<c:url value='/member/logout'/>" class="btn btn-default btn-flat">Sign out</a>
+                      <%-- <a href="<c:url value='/member/logout'/>" class="btn btn-default btn-flat">Sign out</a> --%>
                     </div>
                   </li>
                 </ul>
@@ -324,10 +326,10 @@
                 <li><a href="/board/listCri"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
                 --%>
                 <li><a href="<c:url value='/board/listPage' />"><i class="fa fa-circle-o"></i>게시판</a></li>
-                <li><a href="/resources/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                <!-- <li><a href="/resources/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li> -->
               </ul>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>Layout Options</span>
@@ -449,7 +451,7 @@
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-          </ul>
+ -->          </ul>
         </section>
         <!-- /.sidebar -->
       </aside>

@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
 	<wb-module deploy-name="study-1.0.0-BUILD-SNAPSHOT">
+=======
+<<<<<<< HEAD
+	<wb-module deploy-name="study-1.0.0-BUILD-SNAPSHOT">
+=======
+	<wb-module deploy-name="spring_study">
+>>>>>>> master
+>>>>>>> 4a56cafc8fba84c9a38873ad82dd4375584f2ca0
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
 		<wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
 		<property name="java-output-path" value="target/classes"/>
         <property name="context-root" value="study"/>
 	</wb-module>

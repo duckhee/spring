@@ -1,32 +1,38 @@
-package com.study.board.controller;
+package com.spring.study.board.controller;
 
 
 import java.util.List;
-
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.spring.study.board.model.vo.ReplyVO;
 import com.spring.study.board.model.vo.BoardVO;
+import com.spring.study.board.model.vo.ReplyVO;
 import com.spring.study.board.service.BoardService;
 
+
 @Controller
-@RequestMapping(value="board")
+@RequestMapping(value="/board")
 public class BoardController {
 
+	
+	
 	@Resource(name="BoardService")
 	private BoardService service;
 	
-	@RequestMapping("/listPage")
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String cell() {
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value="/listPage")
 	public String list(Model model)
 	{
 		System.out.println("list page controllers");
 		List<BoardVO> list = service.list();
+		System.out.println("list : " + list.toString());
 		model.addAttribute("list", list);
 		return "board/listPage";
 	}
@@ -44,15 +50,17 @@ public class BoardController {
 		return "redirect:/board/listPage" ; 
 	}
 	
-	@RequestMapping(value="/detail", method=RequestMethod.GET)
-	public String detail_list(Model model) {
-		return "";
+	/*@RequestMapping(value="/detail", method=RequestMethod.GET)
+	public String detail_list(BoardVO obj, Model model) {
+		BoardVO board = service.read(obj);
+		model.addAttribute("board", board);
+		return "/board/readPage";
 	}
 	@RequestMapping(value="/detail", method=RequestMethod.POST)
 	public String postdetail_list(Model model) {
 		return "";
 	}
-	
+	*/
 	
 	@RequestMapping(value="/readPage" , method=RequestMethod.GET)
 	public String read(BoardVO obj, Model model){
