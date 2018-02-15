@@ -61,12 +61,13 @@ public class BoardController {
 	*/
 	
 	@RequestMapping(value="/readPage" , method=RequestMethod.GET)
-	public String read(BoardVO obj, Model model){
-		System.out.println("Ctrl read post");
+	public String readForm(BoardVO obj, Model model){
+		System.out.println("Ctrl read get");
 		BoardVO board = service.read(obj);
 		model.addAttribute("board", board);
 		return "/board/readPage" ; 
 	}
+	
 	
 	@RequestMapping(value="/removePage" , method=RequestMethod.GET)
 	public String remove(BoardVO obj){

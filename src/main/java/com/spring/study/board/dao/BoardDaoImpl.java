@@ -34,7 +34,7 @@ public class BoardDaoImpl implements BoardDao {
 	
 	private void upCnt(BoardVO obj) {
 		System.out.println("Dao upCnt");
-		session.update("com.spring.acorn.mapper.board.upcnt", obj);
+		session.update("com.spring.study.mapper.board.upcnt", obj);
 		/*
 		 * UPDATE TBL_BOARD 
 		 * SET VIEWCNT = VIEWCNT + 1
@@ -48,7 +48,7 @@ public class BoardDaoImpl implements BoardDao {
 		System.out.println("Dao readRow");
 		upCnt(obj);
 		System.out.println("Dao param : "+obj.getBno());
-		BoardVO board = session.selectOne("com.spring.acorn.mapper.board.read", obj);
+		BoardVO board = session.selectOne("com.spring.study.mapper.board.read", obj);
 		List<ReplyVO> rlist = session.selectList("read", obj);
 		board.setRlist(rlist);
 		return board ; 
